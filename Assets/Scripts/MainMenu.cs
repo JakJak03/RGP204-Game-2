@@ -15,7 +15,11 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Game has QUIT");
         Application.Quit();
+    }
 
-
+    public void ReplayGame()
+    {
+        //Not sure if this works yet ??
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, 0);
     }
 }
