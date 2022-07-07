@@ -172,7 +172,8 @@ MonoBehaviour:
   nextButton: {fileID: 846902046}
   inputKey: 97
   isStartingButton: 1
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &50830405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -766,7 +767,8 @@ MonoBehaviour:
   nextButton: {fileID: 803456486}
   inputKey: 102
   isStartingButton: 0
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &667800278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -868,7 +870,8 @@ MonoBehaviour:
   nextButton: {fileID: 926575380}
   inputKey: 103
   isStartingButton: 0
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &803456489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -970,7 +973,8 @@ MonoBehaviour:
   nextButton: {fileID: 1459359774}
   inputKey: 115
   isStartingButton: 0
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &846902049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1069,10 +1073,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 50830402}
+  nextButton: {fileID: 846902046}
   inputKey: 104
   isStartingButton: 0
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &926575383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1794,7 +1799,8 @@ MonoBehaviour:
   nextButton: {fileID: 667800275}
   inputKey: 100
   isStartingButton: 0
-  countdown: 1.5
+  startingButton: {fileID: 50830402}
+  countdown: 5
 --- !u!212 &1459359777
 SpriteRenderer:
   m_ObjectHideFlags: 0

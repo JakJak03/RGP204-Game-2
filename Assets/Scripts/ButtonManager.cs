@@ -5,12 +5,14 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     [Header("Input Variables")]
-    [SerializeField]
-    private GameObject nextButton;
+    public GameObject nextButton;
     [SerializeField]
     private KeyCode inputKey;
     [SerializeField]
     private bool isStartingButton;
+
+    [SerializeField]
+    private GameObject startingButton;
 
     [Header("Score Variables")]
     [SerializeField]
@@ -24,6 +26,7 @@ public class ButtonManager : MonoBehaviour
     private void OnEnable()
     {
         currentCountdown = StartCoroutine(Countdown());
+
     }
 
     private void Start()
@@ -47,7 +50,13 @@ public class ButtonManager : MonoBehaviour
         {
             StopCoroutine(currentCountdown);
             scoreManager.IncreaseScore(scoreMultiplier);
-            nextButton.SetActive(true);
+            if (isStartingButton)
+                nextButton.SetActive(true);
+            else
+            {
+                startingButton.GetComponent<ButtonManager>().nextButton = nextButton;
+                startingButton.SetActive(true);
+            }
             gameObject.SetActive(false);
         }
         else if (currentEvent.keyCode.ToString().Length == 1 && char.IsLetter(currentEvent.keyCode.ToString()[0]))
