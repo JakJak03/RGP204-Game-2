@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class ScoreManager : MonoBehaviour
     {
         health--;
         print("You stabbed yourself");
-        //if(health <= 0)
-            //Die
+        if (health <= 0)
+            SceneManager.LoadScene("EndMenu");
     }
 }

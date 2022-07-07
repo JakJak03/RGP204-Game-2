@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
 
     public void ReplayGame()
     {
-        //Not sure if this works yet ??
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, 0);
+        SceneManager.LoadScene("Buttons");
     }
 }
