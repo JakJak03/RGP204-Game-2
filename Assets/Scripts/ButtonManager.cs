@@ -15,12 +15,10 @@ public class ButtonManager : MonoBehaviour
     [Header("Score Variables")]
     [SerializeField]
     private float countdown;
-
+    private int scoreMultiplier;
 
     Event currentEvent;
-
     private ScoreManager scoreManager;
-
     Coroutine currentCountdown;
 
     private void OnEnable()
@@ -48,7 +46,7 @@ public class ButtonManager : MonoBehaviour
         if (currentEvent.keyCode == inputKey)
         {
             StopCoroutine(currentCountdown);
-            scoreManager.IncreaseScore(10);
+            scoreManager.IncreaseScore(scoreMultiplier);
             nextButton.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -59,10 +57,13 @@ public class ButtonManager : MonoBehaviour
     private IEnumerator Countdown()
     {
         float currentCountdown = countdown;
+        scoreMultiplier = 10;
         do
         {
             yield return new WaitForSeconds(0.1f);
             currentCountdown -= 0.1f;
+            if(scoreMultiplier > 1)
+                scoreMultiplier--;
 
         } while (currentCountdown > 0);
         scoreManager.GetStabbed();

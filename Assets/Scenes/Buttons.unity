@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc54f4fc0907eee42819d1caa32c867f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreIncrease: 1
-  health: 0
+  scoreIncrease: 2
+  health: 5
   scoreText: {fileID: 0}
 --- !u!4 &207179918
 Transform:
