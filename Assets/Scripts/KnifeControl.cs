@@ -5,11 +5,6 @@ using UnityEngine;
 public class KnifeControl : MonoBehaviour
 {
     public Transform Buttons;
-    //public enum ButtonLabels
-    //{
-    // A = 0,
-    //}
-
     public List<Vector3> ButtonsList;
 
     void Start()

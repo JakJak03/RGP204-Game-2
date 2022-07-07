@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject nextButton;
+    [SerializeField]
+    private KeyCode inputKey;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private bool isStartingButton;
+
+    Event currentEvent;
+
+    private void Start()
     {
-        
+        if (!isStartingButton)
+            gameObject.SetActive(false);
+    }
+    private void OnGUI()
+    {
+        currentEvent = Event.current;
+        if (currentEvent.type == EventType.KeyDown)
+            Clicked();
+    }
+    private void Clicked()
+    {
+        if (currentEvent.keyCode == inputKey)
+        {
+            nextButton.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        else if (currentEvent.keyCode.ToString().Length == 1 && char.IsLetter(currentEvent.keyCode.ToString()[0]))
+            FindObjectOfType<ScoreManager>().GetStabbed();
     }
 }
