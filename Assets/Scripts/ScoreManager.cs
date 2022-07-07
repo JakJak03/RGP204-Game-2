@@ -47,9 +47,9 @@ public class ScoreManager : MonoBehaviour
 
     public void GetStabbed()
     {
-        health--;
+        currentHealth--;
         print("You stabbed yourself");
-        if (health <= 0)
+        if (currentHealth <= 0)
             SceneManager.LoadScene("EndMenu");
     }
 }
