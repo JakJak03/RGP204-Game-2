@@ -2301,7 +2301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fe29b82368bb6479e86384542a1377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: cf4847bc726b3b14a9b40cfa26709e74, type: 3}
+  - {fileID: 8300000, guid: aa474eb0900d0164bbe63f56e2940068, type: 3}
   audioClipPrefab: {fileID: 8452773776177975465, guid: 8bace81638ac77142b6915e328a5c580, type: 3}
 --- !u!4 &1826235993
 Transform:
