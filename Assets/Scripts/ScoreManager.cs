@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     public AudioSource Ouch;
     public AudioSource Stab;
+    public AudioSource Silly;
 
     public static ScoreManager instance;
 
@@ -68,5 +69,10 @@ public class ScoreManager : MonoBehaviour
     public void PlayStab()
     {
         Stab.Play();
+    }
+
+    public void PlaySilly()
+    {
+        Silly.Play();
     }
 }
