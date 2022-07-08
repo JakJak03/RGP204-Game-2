@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    public AudioSource Ouch;
-    public AudioSource Stab;
-    public AudioSource Silly;
-
     public static ScoreManager instance;
 
     [SerializeField]
@@ -64,11 +60,13 @@ public class ScoreManager : MonoBehaviour
     public void PlayOuch()
     {
         //Change sound depending on scene
-        Ouch.Play();
+        StartCoroutine(SoundManager.PlayClip(1, 1));
+        //Ouch.Play();
     }
 
     public void PlayStab()
     {
-        Stab.Play();
+        StartCoroutine(SoundManager.PlayClip(0, 1));
+        //Stab.Play();
     }
 }
