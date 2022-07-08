@@ -7,12 +7,17 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGameA ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Buttons");
     }
 
     public void PlayGameB ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Buttons2");
+    }
+
+    public void PlayGameC()
+    {
+        SceneManager.LoadScene("Buttons3");
     }
 
     public void QuitGame()
@@ -23,6 +28,6 @@ public class MainMenu : MonoBehaviour
 
     public void ReplayGame()
     {
-        SceneManager.LoadScene("Buttons");
+        SceneManager.LoadScene("StartMenu");
     }
 }

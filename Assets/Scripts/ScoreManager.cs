@@ -63,16 +63,12 @@ public class ScoreManager : MonoBehaviour
 
     public void PlayOuch()
     {
+        //Change sound depending on scene
         Ouch.Play();
     }
 
     public void PlayStab()
     {
         Stab.Play();
-    }
-
-    public void PlaySilly()
-    {
-        Silly.Play();
     }
 }
