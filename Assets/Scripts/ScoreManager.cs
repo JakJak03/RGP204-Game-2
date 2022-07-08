@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    public AudioSource Ouch;
+    public AudioSource Stab;
+
     public static ScoreManager instance;
 
     [SerializeField]
@@ -42,14 +45,28 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int multiplier)
     {
         currentScore += scoreIncrease * multiplier;
+        PlayStab();
         scoreText.text = currentScore.ToString("0000");
+       
     }
 
     public void GetStabbed()
     {
         currentHealth--;
+        PlayOuch();
         print("You stabbed yourself");
         if (currentHealth <= 0)
             SceneManager.LoadScene("EndMenu");
+
+    }
+
+    public void PlayOuch()
+    {
+        Ouch.Play();
+    }
+
+    public void PlayStab()
+    {
+        Stab.Play();
     }
 }
