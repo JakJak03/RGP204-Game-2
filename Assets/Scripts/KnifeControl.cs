@@ -4,46 +4,13 @@ using UnityEngine;
 
 public class KnifeControl : MonoBehaviour
 {
-    public Transform Buttons;
-    public List<Vector3> ButtonsList;
-
-    void Start()
+    public void MoveKnife(Transform stabPoint, bool didHit)
     {
-        ButtonsList = new List<Vector3>();
-
-        for (int i = 0; i < Buttons.childCount; i++)
+        transform.position = stabPoint.position;
+        if(didHit)
         {
-            ButtonsList.Add(Buttons.GetChild(i).transform.position);
-        }
-    }
-    
-    //A //S //D //F //G //H
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position = new Vector3(ButtonsList[0].x, ButtonsList[0].y, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position = new Vector3(ButtonsList[1].x, ButtonsList[1].y, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = new Vector3(ButtonsList[2].x, ButtonsList[2].y, 0);
-        }
-        if (Input.GetKey(KeyCode.F))
-        {
-            transform.position = new Vector3(ButtonsList[3].x, ButtonsList[3].y, 0);
-        }
-        if (Input.GetKey(KeyCode.G))
-        {
-            transform.position = new Vector3(ButtonsList[4].x, ButtonsList[4].y, 0);
-        }
-        if (Input.GetKey(KeyCode.H))
-        {
-            transform.position = new Vector3(ButtonsList[5].x, ButtonsList[5].y, 0);
+            FindObjectOfType<BloodManager>().InstantiateBlood(new Vector3 (stabPoint.position.x, stabPoint.position.y, 5f), stabPoint);
+            StartCoroutine(SoundManager.PlayClip(1, 1));
         }
     }
 }

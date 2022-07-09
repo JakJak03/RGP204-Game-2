@@ -9,6 +9,9 @@ public class BloodManager : MonoBehaviour
     [SerializeField]
     private GameObject bloodSplatPrefab;
 
+    public Transform[] missPos;
+
+
     [System.Serializable]
     public struct Finger
     {
@@ -39,41 +42,38 @@ public class BloodManager : MonoBehaviour
     Coroutine currentCountdown;
     private float countdown = 4.0f;
 
-    public void Blood_Instance5()
+    //public void Blood_Instance5()
+    //{
+    //    InstantiateBlood(finger4.position, finger4.rotation);
+    //}
+    //
+    //public void Blood_Instance4()
+    //{
+    //    InstantiateBlood(finger3.position, finger3.rotation);
+    //}
+    //
+    //public void Blood_Instance3()
+    //{
+    //    InstantiateBlood(finger2.position, finger2.rotation);
+    //}
+    //
+    ////index
+    //public void Blood_Instance2()
+    //{
+    //    InstantiateBlood(finger1.position, finger1.rotation);
+    //}
+    //
+    //public void Blood_Instance1()
+    //{
+    //    InstantiateBlood(thumb.position, thumb.rotation);
+    //}
+
+    public void InstantiateBlood(Vector3 position,Transform rotation)
     {
-        InstantiateBlood(finger4.position, finger4.rotation);
-    }
+        GameObject blood = Instantiate(bloodAnimPrefab, position, rotation.rotation);
+        GameObject bloodSplat = Instantiate(bloodSplatPrefab, position, rotation.rotation);
 
-    public void Blood_Instance4()
-    {
-        InstantiateBlood(finger3.position, finger3.rotation);
-    }
-
-    public void Blood_Instance3()
-    {
-        InstantiateBlood(finger2.position, finger2.rotation);
-    }
-
-    //index
-    public void Blood_Instance2()
-    {
-        InstantiateBlood(finger1.position, finger1.rotation);
-    }
-
-    public void Blood_Instance1()
-    {
-        InstantiateBlood(thumb.position, thumb.rotation);
-    }
-
-    private void InstantiateBlood(Vector3 position, Vector3 rotation)
-    {
-        GameObject blood = Instantiate(bloodAnimPrefab);
-        GameObject bloodSplat = Instantiate(bloodSplatPrefab);
-
-        blood.transform.position = position;
-        bloodSplat.transform.position = new Vector3(position.x, position.y, 1);
-
-        blood.transform.Rotate(rotation);
+        bloodSplat.transform.position = new Vector3(position.x, position.y, position.z - 6);
 
         blood.transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
         //destroy only the splatter and leave the blood

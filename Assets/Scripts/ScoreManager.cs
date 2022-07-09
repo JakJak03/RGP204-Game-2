@@ -22,6 +22,10 @@ public class ScoreManager : MonoBehaviour
     [HideInInspector]
     public TextMeshProUGUI scoreText;
 
+    [HideInInspector] private bool shouldPlaySounds;
+
+
+
     private void Awake()
     {
         if (instance == null)
@@ -42,31 +46,15 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int multiplier)
     {
         currentScore += scoreIncrease * multiplier;
-        PlayStab();
         scoreText.text = currentScore.ToString("0000");
-       
     }
 
     public void GetStabbed()
     {
+        int randNum = Random.Range(0, FindObjectOfType<BloodManager>().missPos.Length);
+        FindObjectOfType<KnifeControl>().MoveKnife(FindObjectOfType<BloodManager>().missPos[randNum].transform, true);
         currentHealth--;
-        PlayOuch();
-        print("You stabbed yourself");
         if (currentHealth <= 0)
             SceneManager.LoadScene("EndMenu");
-
-    }
-
-    public void PlayOuch()
-    {
-        //Change sound depending on scene
-        StartCoroutine(SoundManager.PlayClip(1, 1));
-        //Ouch.Play();
-    }
-
-    public void PlayStab()
-    {
-        StartCoroutine(SoundManager.PlayClip(0, 1));
-        //Stab.Play();
     }
 }
