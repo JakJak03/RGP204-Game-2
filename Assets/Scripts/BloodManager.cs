@@ -6,7 +6,10 @@ public class BloodManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject bloodAnimPrefab;
+    [SerializeField]
+    private GameObject bloodSplatPrefab;
 
+    [System.Serializable]
     public struct Finger
     {
         public Finger(Vector3 pos, Vector3 rot)
@@ -15,62 +18,66 @@ public class BloodManager : MonoBehaviour
             rotation = rot;
         }
 
+        [SerializeField]
         public Vector3 position;
+        [SerializeField]
         public Vector3 rotation;
     }
 
     [SerializeField]
-    private Finger thumb;
+    private Finger thumb = new Finger(new Vector3(-2.9f, -2.7f, 3), new Vector3(0, 0, 60));
+    //index
     [SerializeField]
-    private Finger finger1;
+    private Finger finger1 = new Finger(new Vector3(-1.6f, -0.3f, 3), new Vector3(0, 0, 40));
     [SerializeField]
-    private Finger finger2;
+    private Finger finger2 = new Finger(new Vector3(-0.1f, -0.1f, 3), new Vector3(0, 0, 28));
     [SerializeField]
-    private Finger finger3;
+    private Finger finger3 = new Finger(new Vector3(1.4f, -0.55f, 3), new Vector3(0, 0, 10));
     [SerializeField]
-    private Finger finger4 = new Finger(new Vector3(-2.9f, -2.7f, -2), new Vector3(0, 0, 65));
+    private Finger finger4 = new Finger(new Vector3(2.75f, -1.3f, 3), new Vector3(0, 0, -10));
 
     Coroutine currentCountdown;
-    private float countdown;
+    private float countdown = 4.0f;
 
     public void Blood_Instance5()
     {
-        GameObject blood = GameObject.Instantiate(bloodAnimPrefab);
-        blood.transform.position = finger4.position;
-        blood.transform.Rotate(finger4.rotation);
-        currentCountdown = StartCoroutine(Countdown(blood));
+        InstantiateBlood(finger4.position, finger4.rotation);
     }
 
     public void Blood_Instance4()
     {
-        GameObject blood = GameObject.Instantiate(bloodAnimPrefab);
-        blood.transform.position = finger3Pos;
-        blood.transform.Rotate(finger3Rot);
-        currentCountdown = StartCoroutine(Countdown(blood));
+        InstantiateBlood(finger3.position, finger3.rotation);
     }
 
     public void Blood_Instance3()
     {
-        GameObject blood = GameObject.Instantiate(bloodAnimPrefab);
-        blood.transform.position = finger3Pos;
-        blood.transform.Rotate(finger3Rot);
-        currentCountdown = StartCoroutine(Countdown(blood));
+        InstantiateBlood(finger2.position, finger2.rotation);
     }
 
+    //index
     public void Blood_Instance2()
     {
-        GameObject blood = GameObject.Instantiate(bloodAnimPrefab);
-        blood.transform.position = finger3Pos;
-        blood.transform.Rotate(finger3Rot);
-        currentCountdown = StartCoroutine(Countdown(blood));
+        InstantiateBlood(finger1.position, finger1.rotation);
     }
 
     public void Blood_Instance1()
     {
-        GameObject blood = GameObject.Instantiate(bloodAnimPrefab);
-        blood.transform.position = finger3Pos;
-        blood.transform.Rotate(finger3Rot);
-        currentCountdown = StartCoroutine(Countdown(blood));
+        InstantiateBlood(thumb.position, thumb.rotation);
+    }
+
+    private void InstantiateBlood(Vector3 position, Vector3 rotation)
+    {
+        GameObject blood = Instantiate(bloodAnimPrefab);
+        GameObject bloodSplat = Instantiate(bloodSplatPrefab);
+
+        blood.transform.position = position;
+        bloodSplat.transform.position = new Vector3(position.x, position.y, 1);
+
+        blood.transform.Rotate(rotation);
+
+        blood.transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
+        //destroy only the splatter and leave the blood
+        currentCountdown = StartCoroutine(Countdown(bloodSplat));
     }
 
     private IEnumerator Countdown( GameObject blood )
@@ -87,9 +94,11 @@ public class BloodManager : MonoBehaviour
 
     private void Fade(GameObject blood)
     {
-        Color bloodColour = blood.GetComponent<SpriteRenderer>().color;
-        for (float i = 255 * Time.deltaTime; i >= 0; i++)
-            blood.GetComponent<SpriteRenderer>().color = new Color(bloodColour.r, bloodColour.g, bloodColour.b, i);
+        //Color bloodColour = blood.GetComponent<SpriteRenderer>().color;
+        //for (float i = 255; i >= 0; i--)
+        //{
+        //    blood.GetComponent<SpriteRenderer>().color = new Color(bloodColour.r, bloodColour.g, bloodColour.b, i);
+        //}
         Destroy(blood);
     }
 }

@@ -63,32 +63,54 @@ public class ButtonManager : MonoBehaviour
         }
         else if (currentEvent.keyCode.ToString().Length == 1 && char.IsLetter(currentEvent.keyCode.ToString()[0]))
         {
+            int[] choices = {1, 2};
+            int randomIndex = Random.Range(1, choices.Length);
+
             scoreManager.GetStabbed();
             switch(inputKey)
             {
                 case KeyCode.A:
                     {
-                        bloodManager.Blood_Instance5();
+                        //thumb
+                        bloodManager.Blood_Instance1();
                         break;
                     }
                 case KeyCode.S:
                     {
+                        //choose between thumb and index randomly
+                        if (randomIndex == 1)
+                            bloodManager.Blood_Instance1();
+                        else
+                            bloodManager.Blood_Instance2();
                         break;
                     }
                 case KeyCode.D:
                     {
+                        if (randomIndex == 1)
+                            bloodManager.Blood_Instance2();
+                        else
+                            bloodManager.Blood_Instance3();
                         break;
                     }
                 case KeyCode.F:
-                        {
-                            break;
-                        }
+                    {
+                        if (randomIndex == 1)
+                            bloodManager.Blood_Instance3();
+                        else
+                            bloodManager.Blood_Instance4();
+                        break;
+                    }
                 case KeyCode.G:
-                        {
-                            break;
-                        }
+                    {
+                        if (randomIndex == 1)
+                            bloodManager.Blood_Instance4();
+                        else
+                            bloodManager.Blood_Instance5();
+                        break;
+                    }
                 case KeyCode.H:
                     {
+                        bloodManager.Blood_Instance5();
                         break;
                     }
                 default:
