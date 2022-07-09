@@ -21,6 +21,7 @@ public class ButtonManager : MonoBehaviour
 
     Event currentEvent;
     private ScoreManager scoreManager;
+    private BloodManager bloodManager;
     Coroutine currentCountdown;
 
     private void OnEnable()
@@ -32,6 +33,7 @@ public class ButtonManager : MonoBehaviour
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
+        bloodManager = FindObjectOfType<BloodManager>();
         if (!isStartingButton)
         {
             StopCoroutine(currentCountdown);
@@ -60,7 +62,41 @@ public class ButtonManager : MonoBehaviour
             gameObject.SetActive(false);
         }
         else if (currentEvent.keyCode.ToString().Length == 1 && char.IsLetter(currentEvent.keyCode.ToString()[0]))
+        {
             scoreManager.GetStabbed();
+            switch(inputKey)
+            {
+                case KeyCode.A:
+                    {
+                        bloodManager.Blood_Instance5();
+                        break;
+                    }
+                case KeyCode.S:
+                    {
+                        break;
+                    }
+                case KeyCode.D:
+                    {
+                        break;
+                    }
+                case KeyCode.F:
+                        {
+                            break;
+                        }
+                case KeyCode.G:
+                        {
+                            break;
+                        }
+                case KeyCode.H:
+                    {
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+        }
     }
 
     private IEnumerator Countdown()
