@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonManager : MonoBehaviour
+public class ButtonManager : SequenceManager
 {
+    [SerializeField]
+    private KeyCode inputKey;
+
     [Header("Input Variables")]
     public GameObject nextButton;
     [SerializeField]
-    private KeyCode inputKey;
-    [SerializeField]
-    private bool isStartingButton;
+    protected bool isStartingButton;
 
     [SerializeField]
-    private GameObject startingButton;
+    protected GameObject startingButton;
 
-    [Header("Score Variables")]
     [SerializeField]
     private float countdown;
     private int scoreMultiplier;
@@ -53,12 +53,24 @@ public class ButtonManager : MonoBehaviour
             scoreManager.IncreaseScore(scoreMultiplier);
             StartCoroutine(SoundManager.PlayClip(0, 1));
 
-            if (isStartingButton)
-                nextButton.SetActive(true);
-            else
+            switch (selected)
             {
-                startingButton.GetComponent<ButtonManager>().nextButton = nextButton;
-                startingButton.SetActive(true);
+                case 1:
+                    {
+                        if (isStartingButton)
+                            nextButton.SetActive(true);
+                        else
+                        {
+                            startingButton.GetComponent<ButtonManager>().nextButton = nextButton;
+                            startingButton.SetActive(true);
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        Sequence2();
+                        break;
+                    }
             }
 
             FindObjectOfType<KnifeControl>().MoveKnife(transform, false);
