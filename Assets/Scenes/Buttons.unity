@@ -204,7 +204,7 @@ MonoBehaviour:
   inputKey: 97
   isStartingButton: 1
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &50830405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -257,6 +257,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &205343075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205343076}
+  - component: {fileID: 205343077}
+  m_Layer: 0
+  m_Name: kitchen-knife-g2dfad420d_1280
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205343076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205343075}
+  m_LocalRotation: {x: -0, y: -0, z: 0.92387855, w: 0.3826858}
+  m_LocalPosition: {x: -0.088, y: 5.728, z: 0}
+  m_LocalScale: {x: 0.637, y: 0.637, z: 0.6372}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509234357}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+--- !u!212 &205343077
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205343075}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0047db29ab1d1b24c9579b201dad319e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 12.47}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &207179916
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreIncrease: 2
-  health: 30
+  health: 5
   scoreText: {fileID: 0}
 --- !u!4 &207179918
 Transform:
@@ -883,7 +967,7 @@ MonoBehaviour:
   inputKey: 102
   isStartingButton: 0
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &667800278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1058,7 +1142,7 @@ MonoBehaviour:
   inputKey: 103
   isStartingButton: 0
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &803456489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1161,7 +1245,7 @@ MonoBehaviour:
   inputKey: 115
   isStartingButton: 0
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &846902049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1295,7 +1379,7 @@ MonoBehaviour:
   inputKey: 104
   isStartingButton: 0
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &926575383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2049,7 +2133,7 @@ MonoBehaviour:
   inputKey: 100
   isStartingButton: 0
   startingButton: {fileID: 50830402}
-  countdown: 30
+  countdown: 2
 --- !u!212 &1459359777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2211,7 +2295,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509234354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2267,7 +2351,8 @@ Transform:
   m_LocalPosition: {x: 9.48, y: -4.73, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 205343076}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
