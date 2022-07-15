@@ -200,8 +200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 846902046}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 97
+  nextButton: {fileID: 846902046}
   isStartingButton: 1
   startingButton: {fileID: 50830402}
   countdown: 2
@@ -963,8 +969,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 803456486}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 102
+  nextButton: {fileID: 803456486}
   isStartingButton: 0
   startingButton: {fileID: 50830402}
   countdown: 2
@@ -1138,8 +1150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 926575380}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 103
+  nextButton: {fileID: 926575380}
   isStartingButton: 0
   startingButton: {fileID: 50830402}
   countdown: 2
@@ -1241,8 +1259,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 1459359774}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 115
+  nextButton: {fileID: 1459359774}
   isStartingButton: 0
   startingButton: {fileID: 50830402}
   countdown: 2
@@ -1329,6 +1353,56 @@ Transform:
   m_Father: {fileID: 1491015801}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.55}
+--- !u!1 &923823190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923823192}
+  - component: {fileID: 923823191}
+  m_Layer: 0
+  m_Name: SequenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &923823191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923823190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3d193f7c561a64f9c4a363f229c8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
+--- !u!4 &923823192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923823190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926575380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,8 +1449,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 846902046}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 104
+  nextButton: {fileID: 846902046}
   isStartingButton: 0
   startingButton: {fileID: 50830402}
   countdown: 2
@@ -2129,8 +2209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f1433089e154f419557d8327576a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextButton: {fileID: 667800275}
+  button1: {fileID: 50830402}
+  button2: {fileID: 846902046}
+  button3: {fileID: 1459359774}
+  button4: {fileID: 667800275}
+  button5: {fileID: 803456486}
+  button6: {fileID: 926575380}
   inputKey: 100
+  nextButton: {fileID: 667800275}
   isStartingButton: 0
   startingButton: {fileID: 50830402}
   countdown: 2
